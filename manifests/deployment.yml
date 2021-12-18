@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: spvmaninodejsdocshelloworld 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spvmaninodejsdocshelloworld
+  template:
+    metadata:
+      labels:
+        app: spvmaninodejsdocshelloworld 
+    spec:
+      containers:
+        - name: spvmaninodejsdocshelloworld 
+          image: kubespvacr.azurecr.io/spvmaninodejsdocshelloworld
+          ports:
+          - containerPort: 8080
